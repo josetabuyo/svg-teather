@@ -1,0 +1,19 @@
+{
+  "name" : "svg_export",
+  "description": "le mandás un mensaje vortex de tipoDeMensaje=SVG_export y data con el svg y te genera un png",
+  "version" : "1.0.0",
+  "private" : false,
+  "engines" : {
+    "node": "*",
+    "npm": "*"
+  },
+  "dependencies" : {
+      "node-static": "*",
+      "vortexjs": "*",
+      "express": "*",
+      "socket.io": "*",
+	  "svgexport": "*"
+  },
+  "devDependencies": {}
+}
+

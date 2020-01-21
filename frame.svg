@@ -1,0 +1,12 @@
+<svg id="svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<desc>Created with Snap</desc>
+	<defs>
+		<filter id="Sj1qdr9ao5" filterUnits="userSpaceOnUse">
+			<feGaussianBlur stdDeviation="5,5"/>
+		</filter>
+	</defs><g fill="#000000">
+		<rect x="0" y="0" width="1303" height="702"/>
+	</g><g transform="matrix(1,0,0,1,349,276)" fill="#ffffff" filter="url('#Sj1qdr9ao5')" style="">
+		<circle cx="150" cy="100" r="150"/>
+	</g>
+</svg>

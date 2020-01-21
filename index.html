@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			SVG_teather
+		</title>
+		<style>
+			body{
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+			}
+			article {
+			  height: 100vh;
+			}
+			#svg{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				cursor: none;
+			}
+
+		</style>
+		
+	</head>
+	
+	<body>
+		<svg id="svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
+		</svg>
+		
+		
+	</body>
+	
+	
+	
+	<script src="lib/jquery-2.1.3.min.js"></script>
+	<script src="lib/snap.svg-min.js"></script>
+	
+	<script src="lib/vortex.min.js"></script>
+	<script src="lib/socket.io.js"></script>
+	<script src="lib/underscore-min.js"></script>
+	
+	
+	<script src="SVG_teather.js"></script>
+		
+	<script>
+		
+		$(function(){
+			$('body').on('contextmenu', function(e){
+				e.stopPropagation();
+				return false;
+			});
+			
+			svg_teather = new SVG_teather();
+			
+			
+			Vx.conectarCon(new NodoConectorSocket('http://localhost:3000'));
+			console.log('Conectado a servicio vortex: SVG_export');
+			
+			
+			$('#svg').on('click', function(e){
+				Vx.send({
+					
+					tipoDeMensaje: 'SVG_export',
+					svg: $('#svg')[0].outerHTML
+					
+				}, function(mensaje){
+					
+					console.log('svg exported...');
+					console.log(mensaje);
+					
+				});
+				
+				console.log('svg data enviada');
+				
+			});
+			
+			//alert($('#svg').width() + '  x  ' + $('#svg').height())
+
+		});
+	</script>
+</html>
